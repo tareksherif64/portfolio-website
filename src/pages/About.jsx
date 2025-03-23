@@ -15,7 +15,7 @@ function About() {
 
   const languages = [
     { name: 'English', level: 'Fluent', icon: '🇬🇧' },
-    { name: 'Arabic', level: 'Fluent', icon: '🇪🇬' },
+    { name: 'Arabic', level: 'Native', icon: '🇪🇬' },
     { name: 'French', level: 'B1', icon: '🇫🇷' },
     { name: 'German', level: 'A2', icon: '🇩🇪' }
   ]

@@ -8,7 +8,7 @@ function Experience() {
       id: 1,
       role: "Junior Teaching Assistant",
       company: "German University in Cairo",
-      period: "Feb 2024 - Present",
+      period: "Feb 2023 - Jun 2023",
       description: "Working as a junior teaching assistant for the Computer Science Engineering 202 course, helping first-year students learn basic Java programming skills.",
       skills: ["Java", "Teaching", "Problem Solving"],
       icon: "bi-laptop-code"
@@ -17,9 +17,9 @@ function Experience() {
       id: 2,
       role: "Software Engineering Intern",
       company: "Linkdev",
-      period: "Jul 2023 - Aug 2023",
-      description: "Completed a comprehensive internship program focused on web development technologies. Worked on real-world projects using JavaScript, HTML, and CSS.",
-      skills: ["JavaScript", "HTML/CSS", "Web Development"],
+      period: "Jul 2024 - Aug 2024",
+      description: "Completed a comprehensive internship program focused on web development technologies at a world-renowned company. Worked on projects using JavaScript, HTML, CSS, and React.",
+      skills: ["JavaScript", "HTML/CSS", "React", "Web Development"],
       icon: "bi-code-square"
     }
   ]
@@ -29,7 +29,7 @@ function Experience() {
       id: 1,
       role: "Social Media Head",
       organization: "Vector Games Studio (VGS)",
-      period: "2023 - Present",
+      period: "2024 - Present",
       description: "Managing social media presence for VGS, a university club that teaches game development skills including Game Soundtrack Design (GSD), Game Art Design (GAD), and Game Development Design (GDD).",
       skills: ["Social Media Management", "Content Creation", "Team Leadership"],
       icon: "bi-megaphone"
@@ -38,7 +38,7 @@ function Experience() {
       id: 2,
       role: "Game Soundtrack Design (GSD) Member",
       organization: "Vector Games Studio (VGS)",
-      period: "2022 - 2023",
+      period: "2022 - 2024",
       description: "Participated in the Game Soundtrack Design track, learning and applying audio design principles for game development.",
       skills: ["Audio Design", "Game Development", "Creativity"],
       icon: "bi-music-note-beamed"
@@ -51,7 +51,7 @@ function Experience() {
       degree: "Bachelor of Engineering in Media Engineering and Technology (MET)",
       institution: "German University in Cairo",
       period: "2021 - Present",
-      description: "Specializing in Computer Engineering with a focus on software development and UI/UX design. Expected graduation: June 2026.",
+      description: "Specializing in Computer Engineering with a focus on software development. Expected graduation: June 2026.",
       icon: "bi-mortarboard"
     },
     {
@@ -60,7 +60,7 @@ function Experience() {
       institution: "Green Heights International School",
       period: "2012 - 2021",
       description: "Completed American Diploma with distinction, focusing on STEM subjects.",
-      achievements: ["GPA: 4.0/4.0", "Excellence Award in Mathematics"],
+      achievements: ["GPA: 4.0/4.0", "Highschool Valedictorian"],
       icon: "bi-book"
     }
   ]

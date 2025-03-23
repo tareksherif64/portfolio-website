@@ -29,8 +29,7 @@ function Home() {
           <h2 className={styles.subtitle}>Computer Engineering Student</h2>
           <p className={styles.description}>
             I'm a passionate computer engineering student at the German University in Cairo, 
-            specializing in software development and UI/UX design. Currently working as a 
-            Junior Teaching Assistant while exploring new technologies and building exciting projects.
+            specializing in software development and UI/UX design.
           </p>
           <div className={styles.buttons}>
             <Button 
