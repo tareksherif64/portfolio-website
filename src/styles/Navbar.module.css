@@ -1,0 +1,20 @@
+.navbar {
+    background-color: var(--background-color, #ffffff);
+    color: var(--text-color, #333);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .themeToggle {
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--text-color, #333);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .themeToggle:hover {
+    background-color: var(--text-color, #333);
+    color: var(--background-color, #ffffff);
+  }
+  

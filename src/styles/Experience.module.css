@@ -1,0 +1,275 @@
+.experience {
+  padding: 5rem 0;
+  min-height: 100vh;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--bs-heading-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.sectionTitle {
+  color: var(--bs-primary);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.sectionTitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--bs-primary);
+  border-radius: 2px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bs-border-color);
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2.4rem;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  border: 3px solid var(--bs-body-bg);
+  z-index: 1;
+}
+
+.timelineCard {
+  border: none;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timelineCard:hover {
+  transform: translateX(10px);
+}
+
+.timelineHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.timelineTitle {
+  color: var(--bs-heading-color);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.timelinePeriod {
+  color: var(--bs-primary);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.timelineSubtitle {
+  color: var(--bs-secondary-color);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.timelineDescription {
+  color: var(--bs-body-color);
+  margin-bottom: 1rem;
+}
+
+.skillTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skillTag {
+  background: var(--bs-primary-bg-subtle);
+  color: var(--bs-primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.achievements {
+  margin-top: 1rem;
+}
+
+.achievementsTitle {
+  color: var(--bs-heading-color);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievementsList {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.achievementsList li {
+  color: var(--bs-body-color);
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+  
+  .timelineTitle {
+    font-size: 1.1rem;
+  }
+  
+  .timelineHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .timelinePeriod {
+    margin-top: 0.25rem;
+  }
+}
+
+.experienceAlt {
+  padding: 5rem 0;
+  min-height: 100vh;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.experienceCard {
+  height: 100%;
+  border: none;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.experienceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cardHeader {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  color: var(--bs-heading-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.25rem;
+}
+
+.cardSubtitle {
+  color: var(--bs-secondary-color);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.cardPeriod {
+  color: var(--bs-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cardDescription {
+  color: var(--bs-body-color);
+  margin-bottom: 1.5rem;
+}
+
+.skillBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 20px;
+}
+
+.achievements {
+  margin-top: 1rem;
+}
+
+.achievementsTitle {
+  color: var(--bs-heading-color);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.achievementsList {
+  padding-left: 1.5rem;
+  margin: 0;
+}
+
+.achievementsList li {
+  color: var(--bs-body-color);
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .iconWrapper {
+    margin-bottom: 0.5rem;
+  }
+} 

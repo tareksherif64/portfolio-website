@@ -1,0 +1,56 @@
+.about {
+  padding: 5rem 0;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--bs-heading-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.card {
+  height: 100%;
+  border: none;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  color: var(--bs-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.skillsGrid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skillItem {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.skillName {
+  font-weight: 500;
+  color: var(--bs-body-color);
+}
+
+.skillBar {
+  height: 8px;
+  background: var(--bs-secondary-bg);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  background: var(--bs-primary);
+  border-radius: 4px;
+  transition: width 1s ease-in-out;
+} 

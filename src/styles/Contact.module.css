@@ -1,0 +1,152 @@
+.contact {
+  padding: 5rem 0;
+  min-height: 100vh;
+  background: var(--bs-body-bg);
+  color: var(--bs-body-color);
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--bs-heading-color);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.contactCard {
+  height: 100%;
+  border: none;
+  background: var(--bs-tertiary-bg);
+  color: var(--bs-body-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cardTitle {
+  color: var(--bs-heading-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.cardTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--bs-primary);
+  border-radius: 2px;
+}
+
+.contactText {
+  color: var(--bs-body-color);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.contactInfo {
+  margin-bottom: 2rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: var(--bs-body-color);
+}
+
+.contactItem i {
+  font-size: 1.2rem;
+  color: var(--bs-primary);
+  margin-right: 1rem;
+}
+
+.socialTitle {
+  color: var(--bs-heading-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.socialLink:hover {
+  background: var(--bs-primary-hover);
+  transform: translateY(-5px);
+}
+
+.formControl {
+  background: var(--bs-body-bg);
+  border: 1px solid var(--bs-border-color);
+  color: var(--bs-body-color);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+}
+
+.formControl:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+  border-color: var(--bs-primary);
+}
+
+.submitButton {
+  padding: 0.75rem 2rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  
+  .contactCard {
+    margin-bottom: 2rem;
+  }
+}
+
+.socialLinkLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--bs-body-bg);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.socialLinkLogo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.socialLogo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+} 
