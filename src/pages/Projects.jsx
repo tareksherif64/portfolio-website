@@ -8,7 +8,7 @@ function Projects() {
       id: 1,
       title: "Heisenberg",
       description: "Fully functional donations website where users can register as donors or organizations, make donations, and request donations for delivery. Built with database integration for seamless user experience.",
-      image: "/project1.jpg", // Add your project images to the public folder
+      image: "/Heisenberg.jpg", // Add your project images to the public folder
       technologies: ["Java", "Database", "Creative Coding"],
       github: "https://github.com/tareksherif64/Heisenberg",
       live: null // Set to null if no live demo is available
@@ -17,7 +17,7 @@ function Projects() {
       id: 2,
       title: "Linkdev Internship Projects",
       description: "Collection of projects completed during my internship at Linkdev, demonstrating practical application of software development skills in a professional environment.",
-      image: "/project2.jpg",
+      image: "/LinkDev.jpg",
       technologies: ["JavaScript", "Web Development"],
       github: "https://github.com/tareksherif64/Linkdev-Internship-Projects",
       live: null
@@ -35,7 +35,7 @@ function Projects() {
       id: 4,
       title: "Calculator",
       description: "A Java-based calculator application with a clean user interface and standard mathematical operations.",
-      image: "/project4.jpg",
+      image: "/Calculator.png",
       technologies: ["Java", "GUI Development"],
       github: "https://github.com/tareksherif64/Calculator",
       live: null
