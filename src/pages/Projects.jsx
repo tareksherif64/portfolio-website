@@ -42,8 +42,40 @@ function Projects() {
     }
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 12
+      }
+    },
+    hover: {
+      y: -10,
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 10
+      }
+    }
+  }
+
   return (
     <section className={styles.projects}>
+      <div className={styles.backgroundPattern}></div>
       <Container>
         <motion.h2 
           className={styles.pageTitle}
@@ -51,66 +83,98 @@ function Projects() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          My Projects
+          <span className={styles.titleAccent}>My</span> Projects
         </motion.h2>
         
-        <Row className="g-4">
-          {projects.map((project, index) => (
-            <Col lg={4} md={6} key={project.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card className={styles.projectCard}>
-                  <div className={styles.imageContainer}>
-                    <Card.Img 
-                      variant="top" 
-                      src={project.image} 
-                      className={styles.projectImage}
-                      alt={project.title}
-                    />
-                  </div>
-                  <Card.Body>
-                    <Card.Title className={styles.projectTitle}>{project.title}</Card.Title>
-                    <Card.Text className={styles.projectDescription}>
-                      {project.description}
-                    </Card.Text>
-                    <div className={styles.techStack}>
-                      {project.technologies.map(tech => (
-                        <span key={tech} className={styles.techBadge}>{tech}</span>
-                      ))}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <Row className="g-4">
+            {projects.map((project, index) => (
+              <Col lg={4} md={6} key={project.id}>
+                <motion.div
+                  variants={cardVariants}
+                  whileHover="hover"
+                  className={styles.cardWrapper}
+                >
+                  <Card className={styles.projectCard}>
+                    <div className={styles.imageContainer}>
+                      <Card.Img 
+                        variant="top" 
+                        src={project.image} 
+                        className={styles.projectImage}
+                        alt={project.title}
+                      />
+                      <div className={styles.imageOverlay}>
+                        <div className={styles.overlayContent}>
+                          <i className="bi bi-eye"></i>
+                          View Project
+                        </div>
+                      </div>
                     </div>
-                    <div className={styles.projectLinks}>
-                      {project.github && (
-                        <Button 
-                          variant="outline-primary" 
-                          href={project.github} 
-                          target="_blank" 
-                          className={styles.projectButton}
-                        >
-                          <i className="bi bi-github me-2"></i>
-                          Code
-                        </Button>
-                      )}
-                      {project.live && (
-                        <Button 
-                          variant="primary" 
-                          href={project.live} 
-                          target="_blank"
-                          className={styles.projectButton}
-                        >
-                          <i className="bi bi-box-arrow-up-right me-2"></i>
-                          Live Demo
-                        </Button>
-                      )}
-                    </div>
-                  </Card.Body>
-                </Card>
-              </motion.div>
-            </Col>
-          ))}
-        </Row>
+                    <Card.Body>
+                      <Card.Title className={styles.projectTitle}>
+                        {project.title}
+                      </Card.Title>
+                      <Card.Text className={styles.projectDescription}>
+                        {project.description}
+                      </Card.Text>
+                      <div className={styles.techStack}>
+                        {project.technologies.map(tech => (
+                          <motion.span
+                            key={tech}
+                            className={styles.techBadge}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            {tech}
+                          </motion.span>
+                        ))}
+                      </div>
+                      <div className={styles.projectLinks}>
+                        {project.github && (
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className={styles.buttonWrapper}
+                          >
+                            <Button 
+                              variant="outline-primary" 
+                              href={project.github} 
+                              target="_blank" 
+                              className={styles.projectButton}
+                            >
+                              <i className="bi bi-github me-2"></i>
+                              Code
+                            </Button>
+                          </motion.div>
+                        )}
+                        {project.live && (
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button 
+                              variant="primary" 
+                              href={project.live} 
+                              target="_blank"
+                              className={styles.projectButton}
+                            >
+                              <i className="bi bi-box-arrow-up-right me-2"></i>
+                              Live Demo
+                            </Button>
+                          </motion.div>
+                        )}
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
+          </Row>
+        </motion.div>
       </Container>
     </section>
   )

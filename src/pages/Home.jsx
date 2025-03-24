@@ -16,6 +16,7 @@ function Home() {
 
   return (
     <section className={styles.home}>
+      <div className={styles.backgroundPattern}></div>
       <Container>
         <motion.div
           className={styles.content}
@@ -23,35 +24,71 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className={styles.title}>
-            Hi, I'm <span className={styles.highlight}>Tarek Sherif</span>
-          </h1>
-          <h2 className={styles.subtitle}>Computer Engineering Student</h2>
-          <p className={styles.description}>
+          <motion.h1 
+            className={styles.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Hi, I'm <motion.span 
+              className={styles.highlight}
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >Tarek Sherif</motion.span>
+          </motion.h1>
+          <motion.h2 
+            className={styles.subtitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            Computer Engineering Student
+          </motion.h2>
+          <motion.p 
+            className={styles.description}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             I'm a passionate computer engineering student at the German University in Cairo, 
             specializing in software development and UI/UX design.
-          </p>
-          <div className={styles.buttons}>
-            <Button 
-              variant="primary" 
-              size="lg" 
-              className={styles.button}
-              onClick={downloadResume}
+          </motion.p>
+          <motion.div 
+            className={styles.buttons}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <i className="bi bi-download me-2"></i>
-              Download CV
-            </Button>
-            <Link to="/projects">
               <Button 
-                variant="outline-primary" 
+                variant="primary" 
                 size="lg" 
                 className={styles.button}
+                onClick={downloadResume}
               >
-                <i className="bi bi-code-slash me-2"></i>
-                View Projects
+                <i className="bi bi-download me-2"></i>
+                Download CV
               </Button>
-            </Link>
-          </div>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/projects">
+                <Button 
+                  variant="outline-primary" 
+                  size="lg" 
+                  className={styles.button}
+                >
+                  <i className="bi bi-code-slash me-2"></i>
+                  View Projects
+                </Button>
+              </Link>
+            </motion.div>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

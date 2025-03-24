@@ -66,7 +66,8 @@ function Experience() {
   ]
 
   return (
-    <section className={styles.experienceAlt}>
+    <section className={styles.experience}>
+      <div className={styles.backgroundPattern}></div>
       <Container>
         <motion.h2 
           className={styles.pageTitle}
@@ -74,7 +75,7 @@ function Experience() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Experience
+          <span className={styles.titleAccent}>My</span> Experience
         </motion.h2>
 
         {/* Work Experience */}

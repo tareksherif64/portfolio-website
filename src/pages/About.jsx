@@ -42,18 +42,16 @@ function About() {
   }
 
   return (
-    <motion.section 
-      className={styles.about}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-    >
+    <section className={styles.about}>
+      <div className={styles.backgroundPattern}></div>
       <Container>
         <motion.h2 
           className={styles.pageTitle}
-          {...fadeInUp}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          About Me
+          <span className={styles.titleAccent}>About</span> Me
         </motion.h2>
 
         {/* Profile Section */}
@@ -173,7 +171,7 @@ function About() {
           </Row>
         </motion.div>
       </Container>
-    </motion.section>
+    </section>
   )
 }
 

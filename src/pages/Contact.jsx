@@ -71,6 +71,7 @@ function Contact() {
 
   return (
     <section className={styles.contact}>
+      <div className={styles.backgroundPattern}></div>
       <Container>
         <motion.h2 
           className={styles.pageTitle}
@@ -78,7 +79,7 @@ function Contact() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Get In Touch
+          <span className={styles.titleAccent}>Get In</span> Touch
         </motion.h2>
         
         <Row className="g-4">

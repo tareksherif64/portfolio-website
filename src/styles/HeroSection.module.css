@@ -1,10 +1,129 @@
 .hero {
   min-height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, var(--bs-body-bg), var(--bs-tertiary-bg));
-  color: var(--bs-body-color);
+  overflow: hidden;
+}
+
+.gradientBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease;
+}
+
+.highlight {
+  background: linear-gradient(120deg, #23a6d5, #23d5ab);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: #444;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.4s backwards;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  animation: fadeInUp 1s ease 0.6s backwards;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-2px);
+}
+
+.primaryButton {
+  background: linear-gradient(120deg, #23a6d5, #23d5ab);
+  color: white;
+  border: none;
+}
+
+.secondaryButton {
+  background: transparent;
+  border: 2px solid #23a6d5;
+  color: #23a6d5;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .buttonContainer {
+    flex-direction: column;
+  }
 }
 
 .container {
@@ -15,38 +134,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 3rem;
-}
-
-.content {
-  text-align: left;
-}
-
-.title {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--bs-heading-color);
-}
-
-.highlight {
-  color: var(--bs-primary);
-}
-
-.subtitle {
-  font-size: 1.5rem;
-  color: var(--bs-secondary-color);
-  margin-bottom: 1.5rem;
-}
-
-.description {
-  font-size: 1.125rem;
-  color: var(--bs-body-color);
-  margin-bottom: 2rem;
-}
-
-.buttonContainer {
-  display: flex;
-  gap: 1rem;
 }
 
 .socialLinks {
@@ -67,5 +154,48 @@
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Add image/media container styles */
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add animation classes */
+.fadeIn {
+  animation: fadeIn 1s ease-in;
+}
+
+.slideIn {
+  animation: slideIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
