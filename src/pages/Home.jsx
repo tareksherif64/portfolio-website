@@ -17,6 +17,7 @@ function Home() {
   return (
     <section className={styles.home}>
       <div className={styles.backgroundPattern}></div>
+      <div className={styles.backgroundAnimation}></div>
       <Container>
         <motion.div
           className={styles.content}
