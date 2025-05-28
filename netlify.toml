@@ -1,10 +1,13 @@
 [build]
   command = "npm run build"
-  publish = "out"
+  publish = ".next"  # Changed from "out" to ".next"
+  functions = "functions"  # Add this if using API routes
 
 [build.environment]
-  NODE_VERSION = "18" # Match your Node.js version
+  NODE_VERSION = "18"  # Must match your .nvmrc or local version
 
-# Required for Next.js on Netlify
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    enableNextJs = true
+    enableImageOptimization = false  # Disable if causing issues
