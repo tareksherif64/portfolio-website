@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { Container, Row, Col, Form, Button, Card, Image } from 'react-bootstrap'
-import { motion } from 'framer-motion'
-import styles from '../styles/Contact.module.css'
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { Container, Row, Col, Form, Button, Card, Image, Alert } from 'react-bootstrap';
+import { motion } from 'framer-motion';
+import styles from '../styles/Contact.module.css';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,42 +10,59 @@ function Contact() {
     email: '',
     subject: '',
     message: ''
-  })
+  });
   
   const [formStatus, setFormStatus] = useState({
     submitted: false,
     success: false,
     message: ''
-  })
+  });
+
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
-    }))
-  }
+    }));
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // In a real application, you would send the form data to a server
-    // For now, we'll just simulate a successful submission
-    setFormStatus({
-      submitted: true,
-      success: true,
-      message: 'Thank you for your message! I will get back to you soon.'
-    })
-    
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-    
-    // In a real application, you would handle errors as well
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      setFormStatus({
+        submitted: true,
+        success: true,
+        message: 'Thank you for your message! I will get back to you soon.'
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      setFormStatus({
+        submitted: true,
+        success: false,
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSending(false);
+    }
+  };
 
   const socialLinks = [
     {
@@ -67,7 +85,7 @@ function Contact() {
       url: 'https://www.instagram.com/tareksherif64/',
       logo: '/instagram-logo-instagram-icon-transparent-free-png.webp'
     }
-  ]
+  ];
 
   return (
     <section className={styles.contact}>
@@ -148,9 +166,9 @@ function Contact() {
                   <h3 className={styles.cardTitle}>Send Me a Message</h3>
                   
                   {formStatus.submitted && (
-                    <div className={`alert ${formStatus.success ? 'alert-success' : 'alert-danger'}`}>
+                    <Alert variant={formStatus.success ? 'success' : 'danger'} className="mb-4">
                       {formStatus.message}
-                    </div>
+                    </Alert>
                   )}
                   
                   <Form onSubmit={handleSubmit}>
@@ -209,13 +227,19 @@ function Contact() {
                     </Form.Group>
                     
                     <div className="text-end">
-                      <Button 
-                        variant="primary" 
-                        type="submit"
-                        className={styles.submitButton}
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        Send Message
-                      </Button>
+                        <Button 
+                          variant="primary" 
+                          type="submit"
+                          className={styles.submitButton}
+                          disabled={isSending}
+                        >
+                          {isSending ? 'Sending...' : 'Send Message'}
+                        </Button>
+                      </motion.div>
                     </div>
                   </Form>
                 </Card.Body>
@@ -225,7 +249,7 @@ function Contact() {
         </Row>
       </Container>
     </section>
-  )
+  );
 }
 
-export default Contact 
+export default Contact;
