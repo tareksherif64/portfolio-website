@@ -5,10 +5,6 @@ import { motion } from 'framer-motion';
 import styles from '../styles/Contact.module.css';
 
 function Contact() {
-  useEffect(() => {
-    // Initialize EmailJS
-    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
-  }, []);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,10 +34,10 @@ function Contact() {
 
     try {
       await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        'service_0dd6lza', // Your EmailJS service ID
+        'template_qz5lqo5', // Your EmailJS template ID
         formData,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        'yjcQXZ_DQK5GUWZy2' // Your EmailJS public key
       );
 
       setFormStatus({
